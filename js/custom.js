@@ -49,9 +49,13 @@ const galleryItems = document.querySelectorAll('.gallery-item');
 
 let currentIndex = 0;
 
-function scrollGallery() {
-    galleryContainer.scrollLeft = galleryItems[currentIndex].offsetLeft;
-    currentIndex = (currentIndex + 1) % galleryItems.length;
-}
 
-setInterval(scrollGallery, 2000); // Auto-scroll every 1 second
+if (galleryContainer && galleryItems) {
+
+    function scrollGallery() {
+        galleryContainer.scrollLeft = galleryItems[currentIndex].offsetLeft;
+        currentIndex = (currentIndex + 1) % galleryItems.length;
+    }
+
+    setInterval(scrollGallery, 2000); // Auto-scroll every 1 second
+}
